@@ -1,0 +1,1 @@
+from . BoardCommonDataView import BoardCommonDataView

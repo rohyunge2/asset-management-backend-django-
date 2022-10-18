@@ -67,4 +67,10 @@ pip install drf-yasg
         'drf_yasg',
     ]
 
-15. 
+15. 복사용
+python manage.py makemigrations apiServer
+python manage.py sqlmigrate apiServer 0001
+python manage.py migrate
+
+16. swagger 주소
+http://127.0.0.1:8000/swagger/
