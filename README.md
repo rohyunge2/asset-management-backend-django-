@@ -39,10 +39,10 @@ class Question(models.Model):
         'app.apps.appConfig',
         ...
     ]
- - python manage.py makemigrations app
+python manage.py makemigrations [app]
 
 10. SQL 확인
-python manage.py sqlmigrate app 0001
+python manage.py sqlmigrate [app] 0001
 
 11. 마이그레이션 반영
 python manage.py migrate
@@ -52,3 +52,19 @@ python manage.py createsuperuser
 
  - rohyunge
  - soaql1102!
+
+
+13. DRF 설치
+pip install djangorestframework
+    INSTALLED_APPS = [
+        ...
+        'rest_framework',
+    ]
+
+14. DRF swagger 설치
+pip install drf-yasg
+    INSTALLED_APPS = [
+        'drf_yasg',
+    ]
+
+15. 
