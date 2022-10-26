@@ -2,7 +2,7 @@ from django.db import models
 from . boardModel import BoardModel
 
 class PostDataModel(models.Model):
-    boardDataSeq = models.AutoField(primary_key=True)
+    postSeq = models.AutoField(primary_key=True)
     boardSeq = models.ForeignKey(BoardModel, on_delete=models.CASCADE)
     modelName = models.CharField(max_length=200)
     serialNum = models.CharField(max_length=200)

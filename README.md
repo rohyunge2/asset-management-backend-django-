@@ -71,6 +71,7 @@ pip install drf-yasg
 python manage.py makemigrations apiServer
 python manage.py sqlmigrate apiServer 0001
 python manage.py migrate
+python manage.py runserver
 
 16. swagger 주소
 http://127.0.0.1:8000/swagger/
