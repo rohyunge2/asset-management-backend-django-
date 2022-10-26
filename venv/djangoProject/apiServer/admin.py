@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-from . models import BoardAdditionalDataModel, BoardCommonDataModel, BoardListModel, BoardAdditionalColumnModel
+from . models import PostExtraDataModel, PostDataModel, BoardModel, BoardExtraColumnModel
 
-admin.site.register(BoardListModel) 
-admin.site.register(BoardCommonDataModel)
-admin.site.register(BoardAdditionalColumnModel)
-admin.site.register(BoardAdditionalDataModel)
+admin.site.register(BoardModel) 
+admin.site.register(PostDataModel)
+admin.site.register(BoardExtraColumnModel)
+admin.site.register(PostExtraDataModel)

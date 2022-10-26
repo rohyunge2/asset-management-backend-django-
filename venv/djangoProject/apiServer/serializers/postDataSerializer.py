@@ -1,21 +1,21 @@
 import imp
 from pyexpat import model
 from rest_framework import serializers
-from .. models . boardCommonDataModel import BoardCommonDataModel
-from . boardListSerializer import BoardListSerializer
-from . boardAdditionalDataSerializer import BoardAdditionalDataSerializer
+from .. models . postDataModel import PostDataModel
+from . boardSerializer import BoardSerializer
+from . postExtraDataSerializer import PostExtraDataSerializer
 
-class BoardCommonDataSerializer(serializers.ModelSerializer):
+class PostDataSerializer(serializers.ModelSerializer):
     
     # def validate(self, data):
     #     if data['first_name'] == data['last_name']:
     #         raise serializers.ValidationError("first_name and last_name shouldn't be same.")
     #     return data
     
-    boardAdditionalData = BoardAdditionalDataSerializer(many=True, read_only=True)
+    boardAdditionalData = PostExtraDataSerializer(many=True, read_only=True)
     
     class Meta:
-        model = BoardCommonDataModel
+        model = PostDataModel
         fields = ['boardDataSeq','boardSeq','modelName','serialNum','userName','deptName','checkOutDate','checkInDate','referNote','createDate','modifyDate', 'boardAdditionalData']
         
     # 읽기 시, 직렬화 지원 메소드
@@ -23,8 +23,8 @@ class BoardCommonDataSerializer(serializers.ModelSerializer):
         response = super().to_representation(instance)
         if isinstance(instance, dict):
             pass
-        elif isinstance(instance, BoardCommonDataModel):
-            response['boardData'] = BoardListSerializer(instance.boardSeq).data
+        elif isinstance(instance, PostDataModel):
+            response['boardData'] = BoardSerializer(instance.boardSeq).data
             
         return response
     

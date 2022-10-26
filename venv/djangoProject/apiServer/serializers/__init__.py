@@ -1,4 +1,4 @@
-from . boardListSerializer import BoardListSerializer
-from . boardAdditionalColumnSerializer import BoardAdditionalColumnSerializer
-from . boardAdditionalDataSerializer import BoardAdditionalDataSerializer
-from . boardCommonDataSerializer import BoardCommonDataSerializer
+from . boardSerializer import BoardSerializer
+from . boardExtraColumnSerializer import BoardExtraColumnSerializer
+from . postDataSerializer import PostDataSerializer
+from . postExtraDataSerializer import PostExtraDataSerializer

@@ -4,27 +4,27 @@ from rest_framework.response import Response
 from rest_framework.renderers import JSONRenderer
 from rest_framework import status
 
-from .. models . boardListModel import BoardListModel
-from .. serializers . boardListSerializer import BoardListSerializer
+from ..models.postExtraDataModel import PostExtraDataModel
+from ..serializers.postExtraDataSerializer import PostExtraDataSerializer
 
-class BoardListView(APIView):
+class PostExtraDataView(APIView):
     permission_classes = [permissions.AllowAny]
     
     ###############################################################################################
-    # 전체 게시판 조회
+    # 전체 추가 컬럼 데이터 조회
     ###############################################################################################
     def get(self, request):
-        queryset = BoardListModel.objects.all()
-        serializer = BoardListSerializer(queryset, many=True)
+        queryset = PostExtraDataModel.objects.all()
+        serializer = PostExtraDataSerializer(queryset, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     
     
     ###############################################################################################
-    # 게시판 추가
+    # 추가 컬럼 데이터 추가
     ###############################################################################################
     def post(self, request):
         
-        serializer = BoardListSerializer(data = request.data)
+        serializer = PostExtraDataSerializer(data = request.data)
         
         if ( serializer.is_valid() ):
             serializer.save()

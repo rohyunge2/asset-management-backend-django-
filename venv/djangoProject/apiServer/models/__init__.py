@@ -1,4 +1,4 @@
-from .boardListModel import BoardListModel
-from .boardAdditionalColumnModel import BoardAdditionalColumnModel
-from .boardCommonDataModel import BoardCommonDataModel
-from .boardAdditionalDataModel import BoardAdditionalDataModel
+from . boardModel import BoardModel
+from . boardExtraColumnModel import BoardExtraColumnModel
+from . postDataModel import PostDataModel
+from . postExtraDataModel import PostExtraDataModel

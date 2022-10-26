@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='boardAdditionalColumnModel',
+            name='boardExtraColumnModel',
             fields=[
                 ('columnSeq', models.AutoField(primary_key=True, serialize=False)),
                 ('columnName', models.CharField(max_length=200)),
@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='boardAdditionalDataModel',
+            name='postExtraDataModel',
             fields=[
                 ('boardAddDataSeq', models.AutoField(primary_key=True, serialize=False)),
                 ('content', models.CharField(max_length=1000)),
@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='boardCommonDataModel',
+            name='postDataModel',
             fields=[
                 ('boardDataSeq', models.AutoField(primary_key=True, serialize=False)),
                 ('modelName', models.CharField(max_length=200)),
@@ -46,7 +46,7 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='boardListModel',
+            name='boardModel',
             fields=[
                 ('boardSeq', models.AutoField(primary_key=True, serialize=False)),
                 ('boardName', models.CharField(max_length=200)),

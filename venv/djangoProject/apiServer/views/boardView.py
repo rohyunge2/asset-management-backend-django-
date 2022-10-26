@@ -4,27 +4,27 @@ from rest_framework.response import Response
 from rest_framework.renderers import JSONRenderer
 from rest_framework import status
 
-from .. models . boardCommonDataModel import BoardCommonDataModel
-from .. serializers . boardCommonDataSerializer import BoardCommonDataSerializer
+from .. models . boardModel import BoardModel
+from .. serializers . boardSerializer import BoardSerializer
 
-class BoardCommonDataView(APIView):
+class BoardView(APIView):
     permission_classes = [permissions.AllowAny]
     
     ###############################################################################################
-    # 전체 게시글 조회
+    # 전체 게시판 조회
     ###############################################################################################
     def get(self, request):
-        queryset = BoardCommonDataModel.objects.all()
-        serializer = BoardCommonDataSerializer(queryset, many=True)
+        queryset = BoardModel.objects.all()
+        serializer = BoardSerializer(queryset, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     
     
     ###############################################################################################
-    # 게시글 작성
+    # 게시판 추가
     ###############################################################################################
     def post(self, request):
         
-        serializer = BoardCommonDataSerializer(data = request.data)
+        serializer = BoardSerializer(data = request.data)
         
         if ( serializer.is_valid() ):
             serializer.save()

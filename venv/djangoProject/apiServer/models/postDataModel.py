@@ -1,9 +1,9 @@
 from django.db import models
-from . boardListModel import BoardListModel
+from . boardModel import BoardModel
 
-class BoardCommonDataModel(models.Model):
+class PostDataModel(models.Model):
     boardDataSeq = models.AutoField(primary_key=True)
-    boardSeq = models.ForeignKey(BoardListModel, on_delete=models.CASCADE)
+    boardSeq = models.ForeignKey(BoardModel, on_delete=models.CASCADE)
     modelName = models.CharField(max_length=200)
     serialNum = models.CharField(max_length=200)
     userName = models.CharField(max_length=100)
